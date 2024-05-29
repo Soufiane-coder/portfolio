@@ -5,12 +5,13 @@ import ProfilePic from '../../public/images/profile/developer-pic-1.png'
 import AnimatedText from "@/components/animated-text.component";
 import Link from "next/link";
 import { LinkArrow } from "@/components/icons.component";
+import HireMe from "@/components/hire-me.component";
+import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 
 export default function Home() {
   return (
     <>
-    <main className='font-mont bg-light w-full min-h-screen'>
-      <NavBar/>
+ 
       <main className="flex items-center text-dark w-full min-h-screen">
         <Layout className="pt-0">
           <div className="flex items-center justify-between w-full">
@@ -33,8 +34,11 @@ Explore my latest projects and articles, showcasing my expertise in React.js and
             </div>
           </div>
         </Layout>
+        <HireMe/>
+        <div className="absolute right-8 bottom-8 inline-block w-24">
+          <Image src={lightBulb} alt='Codebucks' className="w-full h-auto"/>
+        </div>
       </main>
-    </main>
     </>
   );
 }
