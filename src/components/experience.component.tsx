@@ -53,28 +53,28 @@ const Experience = () => {
         <motion.div style={{scaleY: scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px] '/>
         <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
             <Details
-                position='Software Engineer'
-                company='Google'
-                companyLink='www.google.com'
-                time='2022-Present'
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+                position="Bachelor's degree"
+                company='ENS-Rabat'
+                companyLink='http://ens.um5.ac.ma'
+                time='2020-Present'
+                address="Rabat"
+                work="As part of my Bachelor's degree, I am taking my first steps into the field of cybersecurity, focusing particularly on understanding network architectures, network administration, and their implementation using the Packet Tracer simulator. Additionally, I have acquired skills in Linux administration and shell programming, particularly in the use of commands."
             />
             <Details
-                position='Software Engineer'
-                company='Google'
+                position='Fullstack'
+                company='DIPLOMA CHAIN'
                 companyLink='www.google.com'
-                time='2022-Present'
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+                time='2023'
+                address="Rabat"
+                work="In my final year project, we developed a platform called DIPLOMA CHAIN, which aims to securely, reliably, and confidently store students' diplomas using Blockchain and Web3 technology."
             />
             <Details
-                position='Software Engineer'
-                company='Google'
-                companyLink='www.google.com'
-                time='2022-Present'
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+                position='Fullstack'
+                company='Conseils & Solutions Progiciels'
+                companyLink='https://www.cspro.ma'
+                time='2023'
+                address="Hamrya VN, Rue Mellia, IMM ATLAS, Etg 1, APT 6 - 77100 - MEKNES - Maroc"
+                work="In a company, I completed an internship involving a carpooling platform using technologies such as jQuery, HTML, CSS, and Bootstrap."
             />
         </ul>
       </div>

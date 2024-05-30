@@ -92,6 +92,8 @@ const Article : React.FC<Article> = ({img, title, time, link}) => {
 }
 
 const Articles = () => {
+
+    return (<h1>Under construction</h1>)
   return (
     <>
         <TransitionEffect/>
