@@ -15,21 +15,24 @@ const ParticlesContainer = () => {
         
     }, [])
 
-    const element = document.documentElement;
+    if(typeof window != 'undefined'){
+        const element = window.document.documentElement;
 
-    const handleClassChange = () => {
-        setIsDark(element.classList.contains('dark'))
-    }
-
-    const observer = new MutationObserver((mutationsList) => {
-        for (const mutation of mutationsList) {
-            if (mutation.attributeName === 'class') {
-                handleClassChange();
-            }
+        const handleClassChange = () => {
+            setIsDark(element.classList.contains('dark'))
         }
-    });
-
-    observer.observe(element, { attributes: true });
+    
+        const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+                if (mutation.attributeName === 'class') {
+                    handleClassChange();
+                }
+            }
+        });
+    
+        observer.observe(element, { attributes: true });
+    }
+    
     
   return (
     <Particles 
