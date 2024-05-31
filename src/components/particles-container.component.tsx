@@ -1,10 +1,23 @@
 "use client"
-import React, {useCallback, useState} from 'react'
+import Provider from '@/app/providers'
+import ThemeContext from '@/app/theme.context'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Particles from 'react-tsparticles'
 import {loadFull} from 'tsparticles'
 
 const ParticlesContainer = () => {
-    const [isDark, setIsDark] = useState<boolean>(false)
+    const [isDark, setIsDark] = useState<boolean>(true)
+    const context = useContext(ThemeContext);
+
+    if (!context) {
+        throw new Error('ChildComponent must be used within a MyProvider');
+      }
+    
+    const { contextValue, } = context;
+
+    useEffect(() => {
+        setIsDark(contextValue === 'dark')
+    }, [contextValue])
 
     const particlesInit = useCallback(async (engine : any) => {
          console.log(engine)
@@ -15,26 +28,30 @@ const ParticlesContainer = () => {
         
     }, [])
 
-    if(typeof window != 'undefined'){
-        const element = window.document.documentElement;
 
-        const handleClassChange = () => {
-            setIsDark(element.classList.contains('dark'))
-        }
+    // if(typeof window != 'undefined'){
+    //     const element = window.document.documentElement;
+
+    //     const handleClassChange = () => {
+           
+    //         setIsDark(element.classList.contains('dark'))
+    //     }
     
-        const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-                if (mutation.attributeName === 'class') {
-                    handleClassChange();
-                }
-            }
-        });
+    //     const observer = new MutationObserver((mutationsList) => {
+    //         for (const mutation of mutationsList) {
+    //             if (mutation.attributeName === 'class') {
+    //                 handleClassChange();
+    //             }
+    //         }
+    //     });
     
-        observer.observe(element, { attributes: true });
-    }
+    //     observer.observe(element, { attributes: true });
+    // }
     
     
   return (
+    <>
+
     <Particles 
         className='w-full h-full absolute translate-z-0'
         id='tsparticles'
@@ -118,6 +135,7 @@ const ParticlesContainer = () => {
         detectRetina: true,
     }}
     />
+    </>
   )
 }
 

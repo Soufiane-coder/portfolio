@@ -1,11 +1,13 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Logo from './logo.component'
 import {usePathname, useRouter} from 'next/navigation'
 import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon } from './icons.component'
 import {motion} from 'framer-motion'
 import UseThemeSwitcher from './hooks/use-theme-switcher.hook'
+import ThemeContext from '@/app/theme.context'
+import Provider from '@/app/providers'
 
 const CustomLink : React.FC<{href: string, title: string, className?: string,}> = 
     ({href, title, className=''} ) => {
@@ -40,12 +42,25 @@ const NavBar = () => {
     const [mode, setMode] = UseThemeSwitcher();
     const [isOpen, setIsOpen] = useState(false)
 
+    const context = useContext(ThemeContext)
+
+    if (!context) {
+      throw new Error('ChildComponent must be used within a MyProvider');
+    }
+    const {contextValue, setContextValue} = context 
+
+    useEffect(() => {
+        setContextValue(mode)
+        console.log('mode', mode)
+    }, [mode])
+
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
 
   return (
     <div>
+        
       <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8'>
         <button className='flex-col justify-center items-center hidden lg:flex' onClick={handleClick}>
             <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -174,6 +189,7 @@ const NavBar = () => {
             <Logo/>
         </div>
       </header>
+      
     </div>
   )
 }

@@ -4,8 +4,9 @@ import "./globals.css";
 import Footer from "@/components/footer.component";
 import NavBar from "@/components/nav-bar.component";
 import Script from "next/script";
-import Provider from "./template";
+
 import ParticlesContainer from "@/components/particles-container.component";
+import Provider from "./providers";
 
 const montserrat =  Montserrat({ 
   subsets: ["latin"],
@@ -36,15 +37,13 @@ export default function RootLayout({
       </head>
       
       <body className={montserrat.className}>
-        
-       
           <main className='font-mont bg-light w-full min-h-screen dark:bg-dark'>
-            <NavBar/>
-            
-              {children}
+            <Provider>
+              <NavBar/>
+                {children}
+              </Provider>
             <Footer/>
           </main>
-        
       </body>
     </html>
   );

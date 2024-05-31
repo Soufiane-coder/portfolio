@@ -1,9 +1,11 @@
-
-import React, { useEffect, useState } from 'react'
+"use client"
+import ThemeContext from '@/app/theme.context';
+import React, { useContext, useEffect, useState } from 'react'
 
 const UseThemeSwitcher = () : [string,  React.Dispatch<React.SetStateAction<string>>] => {
     const preferDarkQuery = "(prefer-color-scheme: dark)";
     const [mode, setMode] = useState('')
+
 
     useEffect(() => {
       const mediaQuery = window.matchMedia(preferDarkQuery)
@@ -20,6 +22,7 @@ const UseThemeSwitcher = () : [string,  React.Dispatch<React.SetStateAction<stri
         setMode(check)
         if(check === 'dark'){
           document.documentElement.classList.add('dark')
+
         }else{
           document.documentElement.classList.remove('dark')
         }
