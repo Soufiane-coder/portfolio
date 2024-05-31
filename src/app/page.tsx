@@ -8,14 +8,15 @@ import { LinkArrow } from "@/components/icons.component";
 import HireMe from "@/components/hire-me.component";
 import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 import TransitionEffect from "@/components/transition-effect.component";
+import ParticlesContainer from "@/components/particles-container.component";
 
 
 export default function Home() {
   return (
     <>
-      <TransitionEffect/>
-      <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
-        <Layout className="pt-0 md:p-16 sm:pt-8">
+      <ParticlesContainer/>
+      <main className=" z-40 flex items-center text-dark w-full min-h-screen dark:text-light">
+        <Layout className="pt-0 md:p-16 sm:pt-8 !bg-transparent">
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
               <Image src={ProfilePic} alt='CodeBucks' className="w-full h-auto lg:hidden md:inline-block md:w-full p-20 md:p-16 xs:p-10 rounded-full "/>
@@ -40,7 +41,7 @@ Explore my latest projects and articles, showcasing my expertise in web developm
             </div>
           </div>
         </Layout>
-        {/* <HireMe/> */}
+        {/* <HireMe/>  */}
         <div className="absolute right-8 bottom-8 inline-block w-24">
           <Image src={lightBulb} alt='Codebucks' className="w-full h-auto md:hidden"/>
         </div>

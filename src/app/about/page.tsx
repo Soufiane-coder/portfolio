@@ -42,7 +42,6 @@ const AnimatedNumbers : React.FC<{value: number}> = ({value}) => {
 const About = () => {
   return (
     <>
-        <TransitionEffect/>
     
     <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
