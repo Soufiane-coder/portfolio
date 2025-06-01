@@ -12,7 +12,7 @@ const Footer = () => {
                 Build Witch <span className='text-primary text-2xl px-1 dark:text-primaryDark'>&#9825;</span>
                 by &nbsp;<Link href='/about' className='underline underline-offset-2'>Marik</Link>
             </div>
-            <Link href='/' target='_blank' className='underline underline-offset-2'>
+            <Link href='https://buymeacoffee.com/soufianeamimi' target='_blank' className='underline underline-offset-2'>
               <Image src="/buy-me-coffe.png" alt="buy me coffe" width={160} height={20}/>
             </Link>
         </Layout>
