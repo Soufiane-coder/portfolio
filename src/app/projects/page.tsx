@@ -118,9 +118,9 @@ const Projects = () => {
                                     <div className="text-blue-500 bg-blue-500/10 border border-blue-500 rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4">
                                         NextJS
                                     </div>
-                                    <button className="text-yellow-500 bg-yellow-500/10 border border-yellow-500 rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4">
+                                    <div className="text-yellow-500 bg-yellow-500/10 border border-yellow-500 rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4">
                                         Tailwind
-                                    </button>
+                                    </div>
                                 </>}
                             />
                         </div>
@@ -134,7 +134,7 @@ const Projects = () => {
                                 summary="In today's threat landscape, having a responsive and adaptive Security Operations Center (SOC) is not a luxury — it's a necessity. While many organizations rely on commercial tools, I’ve taken a different route: designing a cost-effective and scalable SOC using only open source technologies"
                                 tags={
                                     <>
-                                        <div className="text-green-500 bg-green-500/10 border border-green-500 rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4">
+                                        <div className={`${tailwind_tags_colors[10]} rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4`}>
                                             Linux
                                         </div>
                                         <div className={`${tailwind_tags_colors[3]} rounded-md px-2 py-[2px] text-sm cursor-pointer flex shrink-0 ml-4`}>
